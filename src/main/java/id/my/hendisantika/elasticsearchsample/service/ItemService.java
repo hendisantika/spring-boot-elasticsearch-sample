@@ -1,8 +1,11 @@
 package id.my.hendisantika.elasticsearchsample.service;
 
+import id.my.hendisantika.elasticsearchsample.model.Item;
 import id.my.hendisantika.elasticsearchsample.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,4 +21,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ItemService {
     private final ItemRepository itemRepository;
+
+    public List<Item> findByName(String itemName) {
+        return itemRepository.findByName(itemName);
+    }
 }
