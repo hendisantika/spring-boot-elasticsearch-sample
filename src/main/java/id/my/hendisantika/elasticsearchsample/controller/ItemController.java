@@ -30,4 +30,9 @@ public class ItemController {
     public List<Item> getItemByName(@PathVariable("name") String name) {
         return itemService.findByName(name);
     }
+
+    @GetMapping("/category/{category}")
+    public List<Item> getItemsByCategory(@PathVariable("category") String category) {
+        return itemService.findByCategory(category);
+    }
 }
