@@ -1,9 +1,14 @@
 package id.my.hendisantika.elasticsearchsample.controller;
 
+import id.my.hendisantika.elasticsearchsample.model.Item;
 import id.my.hendisantika.elasticsearchsample.service.ItemService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,4 +25,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ItemController {
     private final ItemService itemService;
+
+    @GetMapping("/{name}")
+    public List<Item> getItemByName(@PathVariable("name") String name) {
+        return itemService.findByName(name);
+    }
 }
