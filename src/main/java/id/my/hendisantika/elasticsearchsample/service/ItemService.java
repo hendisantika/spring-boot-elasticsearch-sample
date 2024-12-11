@@ -29,4 +29,8 @@ public class ItemService {
     public List<Item> findByCategory(String category) {
         return itemRepository.findByCategory(category);
     }
+
+    public List<Item> findByPriceBetween(double low, double high) {
+        return itemRepository.findByPriceBetween(low, high);
+    }
 }
