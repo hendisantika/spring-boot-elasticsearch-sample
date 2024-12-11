@@ -2,6 +2,7 @@ package id.my.hendisantika.elasticsearchsample.repository;
 
 import id.my.hendisantika.elasticsearchsample.model.Item;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * Time: 07.28
  * To change this template use File | Settings | File Templates.
  */
+@Repository
 public interface ItemRepository extends ElasticsearchRepository<Item, Integer> {
     List<Item> findByName(String name);
 

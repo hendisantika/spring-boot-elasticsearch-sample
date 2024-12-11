@@ -11,6 +11,12 @@ server:
 spring:
   application:
     name: elastic-search-sample
+  elasticsearch:
+    uris: http://localhost:9200
+    username: elastic
+    password: mhsj6S4eCTzb7lvlnISbCrKn
+    repositories:
+      enabled: true
   # Time to wait for active requests to finish during the shutdown
   lifecycle:
     timeout-per-shutdown-phase: 20s
