@@ -25,4 +25,8 @@ public class ItemService {
     public List<Item> findByName(String itemName) {
         return itemRepository.findByName(itemName);
     }
+
+    public List<Item> findByCategory(String category) {
+        return itemRepository.findByCategory(category);
+    }
 }
