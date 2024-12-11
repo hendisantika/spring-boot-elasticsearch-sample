@@ -17,7 +17,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * To change this template use File | Settings | File Templates.
  */
 @Data
-@Document(indexName = "itemindex")
+@Document(indexName = "item")
 public class Item {
     @Id
     private int id;
