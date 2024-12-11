@@ -35,4 +35,10 @@ public class ItemController {
     public List<Item> getItemsByCategory(@PathVariable("category") String category) {
         return itemService.findByCategory(category);
     }
+
+    @GetMapping("/prices/{low}/{high}")
+    public List<Item> getItemsByPriceRange(@PathVariable("low") double low,
+                                           @PathVariable("high") double high) {
+        return itemService.findByPriceBetween(low, high);
+    }
 }
