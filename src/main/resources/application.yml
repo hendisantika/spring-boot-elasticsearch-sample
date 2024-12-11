@@ -1,0 +1,24 @@
+server:
+  compression:
+    enabled: true
+  # Default port
+  port: 8080
+  # Enable graceful shutdown - Server will wait for active request to finish
+  shutdown: graceful
+  tomcat:
+    mbeanregistry:
+      enabled: true
+spring:
+  application:
+    name: elastic-search-sample
+  # Time to wait for active requests to finish during the shutdown
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+# Swagger
+springdoc:
+  api-docs:
+    path: /v3/api-doc
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
