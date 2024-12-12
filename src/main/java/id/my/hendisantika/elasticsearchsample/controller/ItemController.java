@@ -26,6 +26,11 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
 
+    @GetMapping()
+    public List<Item> getAllItems() {
+        return itemService.findAll();
+    }
+
     @GetMapping("/{name}")
     public List<Item> getItemByName(@PathVariable("name") String name) {
         return itemService.findByName(name);

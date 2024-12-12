@@ -28,3 +28,5 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /swagger-ui
+application-description: '@project.description@'
+application-version: '@project.version@'

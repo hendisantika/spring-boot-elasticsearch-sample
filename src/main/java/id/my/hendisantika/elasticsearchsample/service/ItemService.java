@@ -3,6 +3,8 @@ package id.my.hendisantika.elasticsearchsample.service;
 import id.my.hendisantika.elasticsearchsample.model.Item;
 import id.my.hendisantika.elasticsearchsample.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +23,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemService {
     private final ItemRepository itemRepository;
+
+    public List<Item> findAll() {
+//        return (List<Item>) itemRepository.findAll();
+        Page<Item> page = itemRepository.findAll(PageRequest.of(0, 10));
+
+        // Convert Page to List
+        List<Item> entities = page.getContent();
+
+        return entities;
+    }
 
     public List<Item> findByName(String itemName) {
         return itemRepository.findByName(itemName);
