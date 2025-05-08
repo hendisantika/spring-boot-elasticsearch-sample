@@ -16,7 +16,7 @@
     <properties>
         <java.version>23</java.version>
         <revision>0.0.1-SNAPSHOT</revision>
-        <opencsv.version>5.10</opencsv.version>
+        <opencsv.version>5.11</opencsv.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.8.8</springdoc-openapi-starter-webmvc-ui.version>
     </properties>
     <dependencies>
